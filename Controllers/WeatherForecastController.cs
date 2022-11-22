@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace weatherforecast-steeltoe-csharp.Controllers;
+namespace weatherforecast.Controllers;
 
 [ApiController]
 [Route("[controller]")]

@@ -1,4 +1,4 @@
-namespace weatherforecast-steeltoe-csharp;
+namespace weatherforecast;
 
 public class WeatherForecast
 {

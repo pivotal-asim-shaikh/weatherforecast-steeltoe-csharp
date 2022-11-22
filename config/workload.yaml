@@ -12,7 +12,7 @@ metadata:
 spec:
   source:
     git:
-      url: https://github.com/vmware-tanzu/application-accelerator-samples.git
+      url: https://github.com/pivotal-asim-shaikh/weatherforecast-steeltoe-csharp
       ref:
         branch: main
-    subPath: weatherforecast-steeltoe
+    
