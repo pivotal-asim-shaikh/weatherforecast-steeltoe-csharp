@@ -1,8 +1,8 @@
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='your-registry.io/project/steeltoe-weatherforecast-source') # update registry
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='https://github.com/pivotal-asim-shaikh/weatherforecast-steeltoe-csharp') # update registry
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
-NAMESPACE = os.getenv("NAMESPACE", default='default')
+NAMESPACE = os.getenv("NAMESPACE", default='developer')
 OUTPUT_TO_NULL_COMMAND = os.getenv("OUTPUT_TO_NULL_COMMAND", default=' > /dev/null ')
-NAME = "sample-app"
+NAME = "weatherforecast-steeltoe-csharp"
 
 k8s_custom_deploy(
   NAME,
@@ -22,6 +22,6 @@ k8s_custom_deploy(
 )
 
 k8s_resource(NAME, port_forwards=["8080:8080"],
-            extra_pod_selectors=[{'serving.knative.dev/service': 'sample-app'}])
+            extra_pod_selectors=[{'serving.knative.dev/service': 'weatherforecast-steeltoe-csharp'}])
 
-allow_k8s_contexts('<context>') # update the context
+allow_k8s_contexts('tap-cluster-admin@tap-cluster')
