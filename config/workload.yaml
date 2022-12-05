@@ -8,12 +8,15 @@ metadata:
     tanzu.app.live.view: "true"
     tanzu.app.live.view.application.flavours: steeltoe
     tanzu.app.live.view.application.name: weatherforecast-steeltoe-csharp
-    apps.tanzu.vmware.com/has-tests: true
-    autoscaling.knative.dev/minScale: "1"
+    apps.tanzu.vmware.com/has-tests: true    
 spec:
   env:
   - name: ASPNETCORE_ENVIRONMENT
     value: "Development" 
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "1"
   source:
     git:
       url: https://github.com/pivotal-asim-shaikh/weatherforecast-steeltoe-csharp
